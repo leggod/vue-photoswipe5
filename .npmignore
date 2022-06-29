@@ -1,0 +1,14 @@
+node_modules/
+vue.config.js
+babel.config.js
+*.map
+*.html
+src/
+docs/
+.idea
+.vscode
+.eslintrc.js
+.github/
+test/  
+.github/  
+test.js

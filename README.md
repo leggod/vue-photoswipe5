@@ -1,24 +1,32 @@
 # vue-photoswipe5
 
-## Project setup
-```
-npm install
+## 安装
+
+```sh
+npm install --save vue-photoswipe5
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+
+
+## 使用
+
+入口文件中全局引入
+
+```javascript
+import Vue from 'vue'
+import vuePicturePreview from 'vue-picture-preview';
+
+Vue.component('Previewer', vuePicturePreview);
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+按需局部引入
 
-### Lints and fixes files
-```
-npm run lint
-```
+```javascript
+import vuePicturePreview from 'vue-picture-preview';
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+export default {
+  components: {
+    Previewer: vuePicturePreview
+  }
+}
+```
