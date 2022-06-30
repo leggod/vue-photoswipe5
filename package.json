@@ -1,6 +1,6 @@
 {
   "name": "vue-photoswipe5",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "main": "./src/index.js",
   "scripts": {
@@ -20,7 +20,9 @@
     "type": "git",
     "url": "https://github.com/leggod/vue-photoswipe5"
   },
-  "files":["src"],
+  "files": [
+    "src"
+  ],
   "dependencies": {},
   "devDependencies": {},
   "browserslist": [
