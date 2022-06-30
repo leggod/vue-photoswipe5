@@ -10,6 +10,9 @@
   "description": "基于vue2和photoswipe 5.0 最新版",
   "author": "xin shan",
   "homepage": "https://www.npmjs.com/package/vue-photoswipe5",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "vue",
     "photoswipe",
