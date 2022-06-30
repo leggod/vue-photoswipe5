@@ -42,10 +42,11 @@ const imagesList = [
     { src: 'https://dummyimage.com/800x600/555/fff/?text=5', width: 800, height: 600 },
 ]
 // 查看当前数组的第一张图
-Vue.$Image.preview(index,imagesList);
+Vue.$previewImage(index,imagesList);
 ```
 ### 可选配置
 
 - bgOpacity: 0.8 //背景透明度
 - spacing: 0.1 //幻灯片之间的间距。定义为相对于视口宽度的比率（0.1 = 视口的 10%）
 - preload:[1,1] 
+- [更多配置](https://photoswipe.com/options/)
