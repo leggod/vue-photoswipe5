@@ -46,8 +46,10 @@ const imagesList = [
 Vue.$previewImage(index,imagesList);
 ```
 
-### 使用指令调用
+## 使用指令调用
 
+指令可以加在任何元素上，不一定非要是img，同时最好传入要预览的宽高。
+指令值暂时空缺，后期有其他计划
 ``` html
 <template>
   <img v-for="item in imagesList" :key="item.src" :src="item.src+'?imageView2/2/w/500/q/100'" v-preview :data-src="item.src" :data-width="item.width" :data-height="item.height">
@@ -64,17 +66,20 @@ Vue.$previewImage(index,imagesList);
   ...
 </script>
 ```
-### 可选配置
+## 可选配置
 
 - bgOpacity: 0.8 //背景透明度
 - spacing: 0.1 //幻灯片之间的间距。定义为相对于视口宽度的比率（0.1 = 视口的 10%）
 - preload:[1,1] //预览时加载前一个和后一个，所以第一次点击是加载3张，且1是最小值，0不行
 - [更多配置](https://photoswipe.com/options/)
 
-### 有用的提示
+## 有用的提示
 
-如果没传入宽高导致图片预览铺满整个屏幕，图片变形，可以尝试覆盖`.pswp__img{object-fit: contain;}`
+如果没传入宽高导致图片预览铺满整个屏幕，图片变形，可以尝试覆盖
+``` css
+.pswp__img{object-fit: contain;}
+```
 
-### 更新日志
-- 2022.4.4 新增指令调用
+## 更新日志
+- 2022.7.4 新增指令调用
 - 2022.6.x init
