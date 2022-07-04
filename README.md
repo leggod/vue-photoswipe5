@@ -57,11 +57,13 @@ Vue.$previewImage(index,imagesList);
 <script>
   ...
   data(){
-    imagesList = [
-      { src: 'https://dummyimage.com/800x600/555/fff/?text=1', width: 800, height: 600 },
-      { src: 'https://dummyimage.com/800x600/555/fff/?text=2', width: 800, height: 600 },
-      { src: 'https://dummyimage.com/800x600/555/fff/?text=3', width: 800, height: 600 }
-    ]
+    return {
+      imagesList: [
+        { src: 'https://dummyimage.com/800x600/555/fff/?text=1', width: 800, height: 600 },
+        { src: 'https://dummyimage.com/800x600/555/fff/?text=2', width: 800, height: 600 },
+        { src: 'https://dummyimage.com/800x600/555/fff/?text=3', width: 800, height: 600 }
+      ]
+    }
   }
   ...
 </script>
@@ -81,5 +83,5 @@ Vue.$previewImage(index,imagesList);
 ```
 
 ## 更新日志
-- 2022.7.4 新增指令调用
+- 2022.7.4 新增指令调用；更新README；
 - 2022.6.x init
