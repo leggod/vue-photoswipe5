@@ -38,5 +38,5 @@ export default {
 </script>
 
 <style scoped>
-@import './photoswipe/photoswipe.css'
+@import './photoswipe/photoswipe.css';
 </style>

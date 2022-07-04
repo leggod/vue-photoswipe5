@@ -8,9 +8,10 @@
   - 仅一个css文件，没有外部资源
   - 内置响应式图像
   - and so on
-- 使用非常简单，api众多且清晰明了
+- 使用非常简单，支持两种方式调用
 - 不需要安装任何依赖，体积小，仅72kb。（官方4.1.3版本731 kB，使用其他作者的包，包里面还有一层依赖，体积会更大）
 - 一次加载全局有效，任何组件中使用都不会增加代码体积（再也不需要管按需不按需，再也不用局部引入）
+
 ## 安装
 
 ```sh
@@ -29,7 +30,7 @@ const options = {
 Vue.use(vuephotoswipe, options)
 ```
 
-## 使用
+## 使用js调用
 ``` javascript
 // 需要打开的图片索引
 const index = 0;
@@ -44,9 +45,36 @@ const imagesList = [
 // 查看当前数组的第一张图
 Vue.$previewImage(index,imagesList);
 ```
+
+### 使用指令调用
+
+``` html
+<template>
+  <img v-for="item in imagesList" :key="item.src" :src="item.src+'?imageView2/2/w/500/q/100'" v-preview :data-src="item.src" :data-width="item.width" :data-height="item.height">
+</template>
+<script>
+  ...
+  data(){
+    imagesList = [
+      { src: 'https://dummyimage.com/800x600/555/fff/?text=1', width: 800, height: 600 },
+      { src: 'https://dummyimage.com/800x600/555/fff/?text=2', width: 800, height: 600 },
+      { src: 'https://dummyimage.com/800x600/555/fff/?text=3', width: 800, height: 600 }
+    ]
+  }
+  ...
+</script>
+```
 ### 可选配置
 
 - bgOpacity: 0.8 //背景透明度
 - spacing: 0.1 //幻灯片之间的间距。定义为相对于视口宽度的比率（0.1 = 视口的 10%）
-- preload:[1,1] 
+- preload:[1,1] //预览时加载前一个和后一个，所以第一次点击是加载3张，且1是最小值，0不行
 - [更多配置](https://photoswipe.com/options/)
+
+### 有用的提示
+
+如果没传入宽高导致图片预览铺满整个屏幕，图片变形，可以尝试覆盖`.pswp__img{object-fit: contain;}`
+
+### 更新日志
+- 2022.4.4 新增指令调用
+- 2022.6.x init
