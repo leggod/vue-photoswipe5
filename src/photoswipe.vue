@@ -14,7 +14,7 @@ export default {
 			dataSource: this.dataSource,
 			pswpModule: () => import("./photoswipe/photoswipe.min.js"),
 			preload: [0, 0],
-			showHideAnimationType: "none",
+			showHideAnimationType: 'zoom',
 			loop: true,
 		};
 		const options = Object.assign(params,this.$options.options);
